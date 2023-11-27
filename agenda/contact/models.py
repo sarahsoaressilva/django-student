@@ -17,5 +17,5 @@ class Contact(models.Model):
     # picture 
 
     def __str__(self):
-        return self.frist_name + ' ' + self.last_name
+        return self.first_name + ' ' + self.last_name
 
