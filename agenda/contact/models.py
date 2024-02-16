@@ -11,11 +11,13 @@ class Contact(models.Model):
     phone = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     created_date = models.DateTimeField(default=timezone.now)
+    show = models.BooleanField(default=True) 
+    picture = models.ImageField(blank=True, upload_to='pictures/%Y_%M') # Pictures depende do Pillow
     # category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
-    # show = models.BooleanField(default=True)
     # owner = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    # picture 
 
+    # Return the concatenation of the first name and last name.
     def __str__(self):
-        return self.first_name + ' ' + self.last_name
+        return f'{self.first_name} {self.last_name}'
+
 
