@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -25,7 +26,7 @@ class Contact(models.Model):
     show = models.BooleanField(default=True) 
     picture = models.ImageField(blank=True, upload_to='pictures/%Y_%M') # Pictures depende do Pillow
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True) 
-    # owner = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     # Return the concatenation of the first name and last name.
     def __str__(self):
