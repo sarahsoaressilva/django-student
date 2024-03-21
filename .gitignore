@@ -6,7 +6,10 @@ __pycache__
 db.sqlite3
 media
 static
+
+# specific django files/folders
 agenda/core/local_settings.py
+agenda/global_static/admin
 
 # Backup files # 
 *.bak 
